@@ -4,17 +4,21 @@
 
 // Code here
 
+let myName = 'Dayne';
+
 //////////////////PROBLEM 2////////////////////
 
 // Create a variable called 'faveNum' with a value that is your favorite number. 
 
 //Code here
-
+let faveNum = 21;
 //////////////////PROBLEM 3////////////////////
 
 // Create a variable called 'lovesCode' and assign it a value of true.
 
 //Code here
+
+let lovesCode = true;
 
 //////////////////PROBLEM 4////////////////////
 
@@ -22,11 +26,15 @@
 
 //Code here
 
+const sum = (num1, num2) => num1 + num2;
+
 //////////////////PROBLEM 5////////////////////
 
 // Create a function called 'lovesCodeChecker' that takes in a single parameter called 'x'. Check to see if 'x' is equal to true. If it is, return a true boolean. If 'x' does not equal true, return a false boolean.  
 
 //Code here
+
+const lovesCodeChecker = x => x === true;
 
 //////////////////PROBLEM 6////////////////////
 
@@ -34,11 +42,15 @@
 
 //Code here
 
+const oddChecker = num => num % 2 !== 0 ? 'the number is odd' : 'the number is even';
+
 //////////////////PROBLEM 7////////////////////
 
 // Create a function called 'iLove' that takes in two string parameters, 'name' and 'love'. Have the function take the two parameters and return a string that says "NAMEPARAM loves LOVEPARAM" with the appropriate parameters in the string. e.g. "Joseph loves music"
 
 //Code Here
+
+const iLove = (name, love) => `${name} loves ${love}`
 
 //////////////////PROBLEM 8////////////////////
 
@@ -47,11 +59,15 @@ const faveColors = ['red', 'green', 'black']
 
 //Code Here
 
+const colorCopy = faveColors.slice();
+
 //////////////////PROBLEM 9////////////////////
 
 // Add a fourth color to the end of the 'colorCopy' array using push.
 
 //Code Here
+
+colorCopy.push('blue');
 
 //////////////////PROBLEM 10////////////////////
 
@@ -60,11 +76,22 @@ const numbers = [1, 2, 3, 4, 5]
 
 //Code Here
 
+const middleNums = numbers.slice(1, 4);
+
 //////////////////PROBLEM 11////////////////////
 
 // Create an object called 'me' that has the following keys: firstName, state, age, and greeter. The value of the firstName key should be your name as a string. The value of the property state should be your current state or providence of residence as a string. The value of age should be your age as a number. greeter should be a method that returns the string 'Hello! My name is NAMEVALUE and I live in STATEVALUE' with the corresponding values. 
 
 //Code Here
+
+const me = {
+	firstName: 'Dayne',
+	state: 'Utah',
+	age: 26,
+	greeter() {
+		return `Hello! My name is ${me.firstName} and I live in ${me.state}`
+	}
+}
 
 //////////////////PROBLEM 12////////////////////
 
@@ -72,11 +99,28 @@ const numbers = [1, 2, 3, 4, 5]
 
 // Code here
 
+const bigOrSmall = arr => {
+	let answers = [];
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] > 100 ? answers.push('big') : answers.push('small');
+	}
+	return answers;
+}
+
 //////////////////PROBLEM 13////////////////////
 
 // Create a function called 'arrayReverser' that takes in one parameter, 'arr'. Inside of arrayReverser, create an empty array called 'reversed'. Using a for loop, loop over the passed in array IN REVERSE (this means your counter should decrement), and then add each item to the 'reversed' array variable you created. Finally, return the 'reversed' array variable. 
 
 //Code Here
+
+const arrayReverser = arr => {
+	const reversed = [];
+	for (let i = arr.length - 1; i >= 0; i--) {
+		reversed.push(arr[i]);
+	}
+	return reversed;
+}
+
 
 //////////////////PROBLEM 14 - 18 Setup////////////////////
 
@@ -90,11 +134,17 @@ const myNumbers = [3, 55, 788, 2, 1]
 
 // Code Here
 
+let doubled = myNumbers.map((element) => element * 2);
+
 //////////////////PROBLEM 15////////////////////
 
 // Now, use .filter to create a new array containing any numbers that are greater than 100. Call the new array 'filtered'. 
 
 // Code Here
+
+let filtered = myNumbers.filter((element) => element > 100);
+
+
 
 //////////////////PROBLEM 16////////////////////
 
@@ -102,11 +152,18 @@ const myNumbers = [3, 55, 788, 2, 1]
 
 // Code Here
 
+let total = myNumbers.reduce((acc, cur) => acc + cur);
+
 //////////////////PROBLEM 17////////////////////
 
 // Finally, use .forEach to find the index of each item in the array. To begin, create an empty array called 'myNumbersIndex'. Then, use forEach to push each item's index from the myNumbers array into the newly created myNumbersIndex array. 
 
 // Code Here
+
+const myNumbersIndex = [];
+myNumbers.forEach((_, i) => {
+	myNumbersIndex.push(i);
+})
 
 //////////////////PROBLEM 18////////////////////
 
@@ -114,6 +171,8 @@ const myNumbers = [3, 55, 788, 2, 1]
 const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
 // Code Here
+
+const forTheLoveOfGeorge = notGeorge.map((name) => name = 'George')
 
 //////////////////PROBLEM 19////////////////////
 
@@ -129,8 +188,14 @@ const people = [
 
 // Code Here
 
+const enemies = people.filter((obj) => obj.friend === false);
+
 //////////////////PROBLEM 20////////////////////
 
 // Using the people array above, get a total of the awesomeLevel from all the people, and store that value in a variable named 'totallyAwesome'. Use .reduce().
 
 // Code Here
+
+const totallyAwesome = people.reduce((acc, cur) => {
+	return acc + cur.awesomeLevel;
+}, 0)
